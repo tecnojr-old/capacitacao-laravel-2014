@@ -15,4 +15,28 @@ class BaseController extends Controller {
 		}
 	}
 
+	public function getAdd(){
+		return $this->formView();
+	}
+
+	public function postAdd(){
+		return $this->store();
+	}
+
+	public function getEdit($id){
+		return $this->formView($id);
+	}
+
+	public function postEdit($id){
+		return $this->store($id);
+	}
+
+	protected function store($id=null){ 
+		throw new BadMethodCallException("Method ".get_called_class()."::store not implemented");	
+	}
+
+	protected function formView($id=null){
+		throw new BadMethodCallException("Method ".get_called_class()."::formView not implemented");
+	}
+
 }

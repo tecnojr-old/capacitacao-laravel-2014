@@ -12,15 +12,7 @@
 */
 
 Route::get('/', 'HomeController@showWelcome');
-
-Route::controller("/user", 'UsersController');
-
-Route::get('/contact', 'FeedbackController@getContact');
-Route::post('/contact', 'FeedbackController@postContact');
-
 Route::controller("/alunos", "AlunosController");
 Route::controller("/disciplinas","DisciplinasController");
 Route::controller("/turmas", "TurmasController");
-
-Route::get("/professores", "ProfessoresController@getIndex");
 Route::controller("/professores", "ProfessoresController");
