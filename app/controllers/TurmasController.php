@@ -3,7 +3,7 @@
 class TurmasController extends BaseController{
 	
 	public function getIndex(){
-		$turmas = Turma::remember(2)->get();
+		$turmas = Turma::all();
 
 		return View::make("turmas.table")->withTurmas($turmas);
 	}
