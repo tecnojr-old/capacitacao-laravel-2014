@@ -19,8 +19,8 @@
 				<td> {{$disciplina->codigo}} </td>
 				<td>
 					<div class="btn-group">
-						{{HTML::link("disciplinas/edit/".$disciplina->id, "", ["class" => "btn btn-default btn-xs glyphicon glyphicon-pencil"])}}
-						{{HTML::link("disciplinas/delete/".$disciplina->id, "", ["onclick"=>"return confirm('Tem certeza que deseja excluir a disciplina ".$disciplina->nome." ?')", "class" => "btn btn-danger btn-xs glyphicon glyphicon-trash"])}} 
+						{{HTML::editButton("disciplinas/edit/".$disciplina->id)}}
+						{{HTML::deleteButton("disciplinas/delete/".$disciplina->id)}} 
 					</div>
 				</td>
 			</tr>

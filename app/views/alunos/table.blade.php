@@ -21,9 +21,11 @@
 				<td>{{$aluno->matricula}}</td>
 				<td>{{$aluno->data_nasc->format("d/m/Y")}}</td>
 				<td> 
+					
 					<div class="btn-group">
-						{{HTML::link("alunos/edit/".$aluno->id, "", ["class" => "btn btn-default btn-xs glyphicon glyphicon-pencil"])}}
-						{{HTML::link("alunos/delete/".$aluno->id, "", ["onclick"=>"return confirm('Tem certeza que deseja excluir o aluno ".$aluno->nome." ?')", "class" => "btn btn-danger btn-xs glyphicon glyphicon-trash"])}} 
+						{{HTML::linkButton("alunos/edit/".$aluno->id."/turmas", "Turmas")}}
+						{{HTML::editButton("alunos/edit/".$aluno->id)}}
+						{{HTML::deleteButton("alunos/delete/".$aluno->id)}} 
 					</div>
 				</td>
 			</tr>

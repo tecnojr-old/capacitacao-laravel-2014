@@ -8,6 +8,10 @@ class TurmasController extends BaseController{
 		return View::make("turmas.table")->withTurmas($turmas);
 	}
 
+	public function getAlunos($id){
+		return View::make("turmas.alunos", ["alunos" => Turma::find($id)->alunos ]);
+	}
+
 	protected function formView($id=null){
 		$turma = Turma::findOrNew($id);
 

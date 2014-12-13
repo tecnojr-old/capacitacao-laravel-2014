@@ -19,8 +19,8 @@
 				<td> {{$professor->matricula}} </td>
 				<td> 
 					<div class="btn-group">
-						{{HTML::link("professores/edit/".$professor->id, "", ["class" => "btn btn-default btn-xs glyphicon glyphicon-pencil"])}}
-						{{HTML::link("professores/delete/".$professor->id, "", ["onclick"=>"return confirm('Tem certeza que deseja excluir o professor ".$professor->nome." ?')", "class" => "btn btn-danger btn-xs glyphicon glyphicon-trash"])}} 
+						{{HTML::editButton("professores/edit/".$professor->id)}}
+						{{HTML::deleteButton("professores/delete/".$professor->id)}} 
 					</div>
 				</td>
 			</tr>

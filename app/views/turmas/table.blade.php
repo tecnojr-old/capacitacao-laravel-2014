@@ -20,11 +20,12 @@
 			<td>{{$turma->professor? $turma->professor->nome : " - "}}</td>
 			<td>{{$turma->codigo}}</td>
 			<td>
-					<div class="btn-group">
-						{{HTML::link("turmas/edit/".$turma->id, "", ["class" => "btn btn-default btn-xs glyphicon glyphicon-pencil"])}}
-						{{HTML::link("turmas/delete/".$turma->id, "", ["onclick"=>"return confirm('Tem certeza que deseja excluir a turma ".$turma->disciplina->codigo."-".$turma->disciplina->descricao." ".$turma->codigo." ?')", "class" => "btn btn-danger btn-xs glyphicon glyphicon-trash"])}} 
-					</div>
-				</td>
+				<div class="btn-group">
+					{{HTML::linkButton("turmas/{$turma->id}/alunos", "Alunos")}}
+					{{HTML::editButton("turmas/edit/".$turma->id)}}
+					{{HTML::deleteButton("turmas/delete/".$turma->id)}} 
+				</div>
+			</td>
 		</tr>
 		@endforeach
 	</tbody>

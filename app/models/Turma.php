@@ -13,4 +13,12 @@ class Turma extends Eloquent{
 		return $this->belongsTo("Professor");
 	}
 
+	public function alunos(){
+		return $this->belongsToMany("Aluno", "alunos_turmas");
+	}
+
+	public function getDescricaoAttribute(){
+		return $this->disciplina->codigo." - ".$this->disciplina->descricao." ".$this->codigo;
+	}
+
 }

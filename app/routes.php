@@ -12,7 +12,16 @@
 */
 
 Route::get('/', 'HomeController@showWelcome');
+
+
+Route::get("/alunos/edit/{id}/turmas", "AlunosController@getTurmas");
+Route::post("/alunos/edit/{id}/turmas", "AlunosController@postTurmas");
+
 Route::controller("/alunos", "AlunosController");
+
 Route::controller("/disciplinas","DisciplinasController");
+Route::get("/turmas/{id}/alunos", "TurmasController@getAlunos");
+
 Route::controller("/turmas", "TurmasController");
+
 Route::controller("/professores", "ProfessoresController");

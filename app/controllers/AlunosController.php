@@ -8,6 +8,21 @@ class AlunosController extends BaseController{
 		return View::make("alunos.table")->withAlunos($alunos);
 	}
 
+	public function getTurmas($id){
+		$aluno = Aluno::find($id);
+
+		$turmas = $aluno->turmas()->lists("turma_id");
+
+		return View::make("alunos.turmas", compact("aluno", "turmas"));
+	}
+
+	public function postTurmas($id){
+		$aluno = Aluno::find($id);
+		$aluno->turmas()->sync(Input::get("turmas", []));
+
+		return Redirect::to("/alunos/edit/$id/turmas");
+	}
+
 	protected function formView($id=null){
 		$aluno = Aluno::findOrNew($id);
 
