@@ -14,12 +14,16 @@
   ],
   "license": "GNU GLP 3.0",
   "private": true,
-  "directory":"./public/packages/",
   "ignore": [
     "**/.*",
     "node_modules",
-    "public/packages/",
+    "public/bower/",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "select2": "~3.5.2",
+    "bootstrap": "~3.3.1",
+    "jquery": "~2.1.1"
+  }
 }
