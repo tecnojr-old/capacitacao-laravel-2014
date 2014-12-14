@@ -8,7 +8,7 @@ Dependências do projeto
 * [Bower](http://bower.io/) - Gerenciador de dependêncais Front-End
 * [Composer](http://getcomposer.org) - Gerenciador de dependências Back-End*
 
-Após instalar o composer e o bower na sua máquina e baixar os códigos em, por exemplo, <code>/projects/tecnojr-escola</code>, 
+Após instalar o composer e o bower na sua máquina e baixar/clonar os códigos desta aplicação em, por exemplo, <code>/projects/tecnojr-escola</code>, 
 a instalação deve ser feita por terminal, shell, bash ou ms-dos: (Execute os comandos um por vez, e sem copiar os comentários, pode dar erro)
 
 ```sh
