@@ -19,7 +19,7 @@
 
 		<div class="form-group {{$errors->has("professor_id")?"has-error": (!$errors->isEmpty()? "has-success": "")}}">
 			{{Form::label("professor_id", "Professor")}}
-			{{Form::select("professor_id", [ null => "Selecione um professor" ] + Professor::lists("nome", "id"), null, ["class"=>"form-control input-md"])}}
+			{{Form::select("professor_id", [null => ""]+Professor::lists("nome", "id"), null, ["class"=>"form-control input-md select2", "data-placeholder" => "Selecione um professor"])}}
 
 			@if($errors->has("professor_id"))
 				<div class="help-block">
@@ -30,7 +30,7 @@
 
 		<div class="form-group {{$errors->has("disciplina_id")?"has-error": (!$errors->isEmpty()? "has-success": "")}}">
 			{{Form::label("disciplina_id", "Disciplina")}}
-			{{Form::select("disciplina_id", [ null => "Selecione uma disciplina" ] + Disciplina::lists("descricao", "id"), null, ["class"=>"form-control input-md"])}}
+			{{Form::select("disciplina_id", [null => ""]+Disciplina::lists("descricao", "id"), null, ["class"=>"form-control input-md select2", "data-placeholder" => "Selecione uma disciplina"])}}
 
 			@if($errors->has("disciplina_id"))
 				<div class="help-block">

@@ -9,7 +9,7 @@
 		<tr>
 			<th> Nome </th>
 			<th> Matricula </th>
-			<th> Opções </th>
+			<th class="options"> Opções </th>
 		</tr>
 	</thead>
 	<tbody>

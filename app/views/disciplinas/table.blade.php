@@ -9,7 +9,7 @@
 		<tr>
 			<th>Descrição</th>
 			<th>Código</th>
-			<th>Opções</th>
+			<th class="options">Opções</th>
 		</tr>
 	</thead>
 	<tbody>

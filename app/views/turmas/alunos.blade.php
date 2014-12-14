@@ -1,4 +1,4 @@
-
+<?php $datatables = true; ?>
 @extends("layouts.bootstrap")
 
 @section("content")

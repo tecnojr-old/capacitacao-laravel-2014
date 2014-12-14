@@ -18,7 +18,7 @@ class Disciplina extends Eloquent{
 
 	protected $rules = [
 		"descricao" => "required|min:10",
-		"codigo" 		=> "required|min:6|unique"
+		"codigo" 		=> "required|min:5|unique"
 	];
 
 	protected $messages = [

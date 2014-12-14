@@ -5,13 +5,13 @@
 {{HTML::link("alunos/add", "Adicionar", ["class" => "btn btn-primary pull-right"])}} <br><br>
 
 @if($alunos)
-	<table class="table table-hover table-striped table-condensed table-bordered">
+	<table class="table table-hover table-striped table-condensed table-bordered ">
 		<thead>
 			<tr>
 				<th>Nome</th>
 				<th>Matrícula</th>
 				<th>Data de Nascimento</th>
-				<th>Opções</th>
+				<th class="options">Opções</th>
 			</tr>
 		</thead>
 		<tbody>

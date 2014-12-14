@@ -1,6 +1,21 @@
 <?php
 
+/* ---------------------------------------------------------
+	 -                    HTML Macros                        -
+   ---------------------------------------------------------*/
 
+/**
+ * HTML Base path
+ * @var string
+ */
+HTML::macro("base", function($url, $target=""){
+	return "<base".HTML::attributes(["href" => URL::to($url), "target" => $target])."/>";
+});
+
+/**
+ * Link generico com botão
+ * @var string
+ */
 HTML::macro("linkButton", function($url, $title, $options = []){
 	
 	$attributes = array_merge([
@@ -11,7 +26,10 @@ HTML::macro("linkButton", function($url, $title, $options = []){
 	return HTML::link($url, $title, $attributes);
 });
 
-
+/**
+ * Link para editar
+ * @var string
+ */
 HTML::macro("editButton", function($url, $options = []){
 	
 	$attributes = array_merge([
@@ -23,6 +41,10 @@ HTML::macro("editButton", function($url, $options = []){
 });
 
 
+/**
+ * Link para deletar
+ * @var string
+ */
 HTML::macro("deleteButton", function($url, $options = []){
 
 	$attributes = array_merge([
@@ -31,4 +53,16 @@ HTML::macro("deleteButton", function($url, $options = []){
 	], $options);
 
 	return HTML::link($url, "", $attributes);
+});
+
+
+/* ---------------------------------------------------------
+	 -                    View Composers                     -
+   ---------------------------------------------------------*/
+View::composer("*form*", function($view){
+	$view->withSelect2(true);
+});
+
+View::composer("*table*", function($view){
+	$view->withDatatables(true);
 });

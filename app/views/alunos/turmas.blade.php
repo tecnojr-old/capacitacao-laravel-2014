@@ -1,3 +1,4 @@
+<?php $select2 = true ?>
 
 @extends("layouts.bootstrap")
 
@@ -10,9 +11,9 @@
 	<p>
 		{{Form::select(
 			"turmas[]", 
-			Turma::get()->lists("descricao", "id"), 
+			[null => ""]+Turma::get()->lists("descricao", "id"), 
 			$turmas, 
-			["class"=>"form-control", "multiple" => true]
+			["class"=>"form-control select2", "multiple" => true, "data-placeholder" => "Selecione a turma"]
  		)}}
 	</p>
 	

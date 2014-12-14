@@ -10,7 +10,7 @@
 			<th>Disciplina</th>
 			<th>Professor</th>
 			<th>Turma</th>
-			<th>Opções</th>
+			<th class="options">Opções</th>
 		</tr>
 	</thead>
 	<tbody>
