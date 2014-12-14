@@ -2,6 +2,8 @@
 /vendor
 /app/config/local
 /.vagrant
+/workbench
+
 .env.*.php
 .env.php
 

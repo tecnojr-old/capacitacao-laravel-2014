@@ -15,19 +15,20 @@ class DisciplinasController extends BaseController{
 	}
 
 	public function store($id=null){
-		$p = Disciplina::findOrNew($id);
+		$disciplina = Disciplina::findOrNew($id);
 
-		$p->descricao = Input::get("descricao");
-		$p->codigo = Input::get("codigo");
+		$disciplina->descricao = Input::get("descricao");
+		$disciplina->codigo = Input::get("codigo");
 
-		if($p->save()){
+		if($disciplina->save()){
 			Session::flash("success", "Os dados disciplina foram salvos com sucesso!");
 			
-
 			return Redirect::to("disciplinas");
 		}
 		else{
-			dd("Erro ao salvar a disciplina!");
+			Session::flash("error", "Erro ao salvar os dados da disciplina, verifique no formulário!");
+
+			return Redirect::back()->withInput()->withErrors($disciplina->getErrors());
 		}
 	}
 

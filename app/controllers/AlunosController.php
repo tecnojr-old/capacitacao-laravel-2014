@@ -46,7 +46,8 @@ class AlunosController extends BaseController{
 			return Redirect::to("alunos");			
 		} 
 		else{
-			dd("Erro!");
+			Session::flash("error", "Houveram erros ao salvar os dados do aluno, verifique no formulário!");
+			return Redirect::back()->withInput()->withErrors($aluno->getErrors());	
 		}
 	}
 

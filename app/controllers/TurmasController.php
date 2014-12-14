@@ -30,7 +30,9 @@ class TurmasController extends BaseController{
 			return Redirect::to("turmas");
 		}
 		else{
-			dd("ERROR");
+			Session::flash("error", "Erro ao salvar os dados da turma, verifique no formulário!");
+
+			return Redirect::back()->withInput()->withErrors($turma->getErrors());
 		}
 	}
 

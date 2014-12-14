@@ -14,18 +14,20 @@ class ProfessoresController extends BaseController{
 	}
 
 	protected function store($id=null){
-		$p = Professor::findOrNew($id);
+		$professor = Professor::findOrNew($id);
 
-		$p->nome = Input::get("nome");
-		$p->matricula = Input::get("matricula");
+		$professor->nome = Input::get("nome");
+		$professor->matricula = Input::get("matricula");
 
-		if($p->save()){
+		if($professor->save()){
 			Session::flash("success", "Os dados do professor foram salvos com sucesso!");
 
 			return Redirect::to("/professores");
 		}
 		else{
-			dd("Erro ao salvar o professor!");
+			Session::flash("error", "Erro ao salvar os dados do professor, verifique no formulário!");
+
+			return Redirect::back()->withInput()->withErrors($professor->getErrors());
 		}
 	}
 
