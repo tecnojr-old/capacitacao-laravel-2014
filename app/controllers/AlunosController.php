@@ -41,6 +41,8 @@ class AlunosController extends BaseController{
 		$aluno->data_nasc= Input::get("data_nasc");
 
 		if($aluno->save()){
+			Session::flash("success", "Os dados do aluno foram salvos com sucesso!");
+			
 			return Redirect::to("alunos");			
 		} 
 		else{

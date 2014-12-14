@@ -16,17 +16,25 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+	</head>
+	<body>
+		<div class="col-md-8 col-md-offset-2">
+			@include("layouts.menu")
+			
+			@if(Session::has("success"))
+				<div class="alert alert-success alert-dismissible" role="alert">
+				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
+				  {{Session::get("success")}}
+				</div>
+			@endif
+
+			@yield("content")		
+		</div>
 
 		<!-- jQuery -->
 		{{HTML::script("js/jquery-2.1.1.min.js")}}
 		
 		<!-- Bootstrap JavaScript -->
 		{{HTML::script("packages/bootstrap/js/bootstrap.min.js")}}
-	</head>
-	<body>
-		<div class="col-md-8 col-md-offset-2">
-			@include("layouts.menu")
-			@yield("content")		
-		</div>
 	</body>
 </html>

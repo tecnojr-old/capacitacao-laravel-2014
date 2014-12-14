@@ -21,6 +21,9 @@ class DisciplinasController extends BaseController{
 		$p->codigo = Input::get("codigo");
 
 		if($p->save()){
+			Session::flash("success", "Os dados disciplina foram salvos com sucesso!");
+			
+
 			return Redirect::to("disciplinas");
 		}
 		else{

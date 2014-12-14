@@ -1,5 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
-  <div class="container-fluid">
+<div class="navbar navbar-default" role="navigation">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu-top-principal">
@@ -12,7 +11,7 @@
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="menu-top-principal">
+    <div class="collapse navbar-collapse navbar-responsive-collapse" id="menu-top-principal">
       <ul class="nav navbar-nav">
         <li>{{HTML::link("/alunos", "Alunos")}}</li>
         <li>{{HTML::link("/disciplinas", "Disciplinas")}}</li>
@@ -52,5 +51,4 @@
         </li>
       </ul> -->
     </div><!-- /.navbar-collapse -->
-  </div><!-- /.container-fluid -->
-</nav>
+</div>

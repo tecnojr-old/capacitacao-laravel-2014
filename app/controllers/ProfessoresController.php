@@ -20,6 +20,8 @@ class ProfessoresController extends BaseController{
 		$p->matricula = Input::get("matricula");
 
 		if($p->save()){
+			Session::flash("success", "Os dados do professor foram salvos com sucesso!");
+
 			return Redirect::to("/professores");
 		}
 		else{
