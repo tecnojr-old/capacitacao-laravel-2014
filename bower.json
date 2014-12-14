@@ -1,0 +1,25 @@
+{
+  "name": "laravel-tecnojr-escola-2014",
+  "version": "0.0.0",
+  "homepage": "https://github.com/vluzrmos/laravel-tecnojr-escola-2014",
+  "authors": [
+    "Vagner do Carmo <vluzrmos@gmail.com>"
+  ],
+  "description": "Projeto Laravel para capacitação em Framework php da TecnoJr",
+  "keywords": [
+    "Laravel",
+    "Framework",
+    "PHP",
+    "Eloquent"
+  ],
+  "license": "GNU GLP 3.0",
+  "private": true,
+  "directory":"./public/packages/",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "public/packages/",
+    "test",
+    "tests"
+  ]
+}

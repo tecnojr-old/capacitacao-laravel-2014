@@ -1,10 +1,10 @@
-/bootstrap/compiled.php
-/vendor
 /app/config/local
+/bootstrap/compiled.php
+/public/bower/*
 /.vagrant
+/vendor
 /workbench
 
+composer.lock
 .env.*.php
 .env.php
-
-composer.lock

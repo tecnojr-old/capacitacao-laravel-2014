@@ -7,8 +7,8 @@
 		<title>Escola</title>
 
 		<!-- Bootstrap CSS -->
-		{{HTML::style("packages/bootstrap/css/bootstrap.min.css")}}
-		{{HTML::style("packages/bootstrap/css/bootstrap-theme.min.css")}}
+		{{HTML::style("bower/bootstrap/dist/css/bootstrap.min.css")}}
+		{{HTML::style("bower/bootstrap/dist/css/bootstrap-theme.min.css")}}
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -39,9 +39,9 @@
 		</div>
 
 		<!-- jQuery -->
-		{{HTML::script("js/jquery-2.1.1.min.js")}}
+		{{HTML::script("bower/jquery/dist/jquery-2.1.1.min.js")}}
 		
 		<!-- Bootstrap JavaScript -->
-		{{HTML::script("packages/bootstrap/js/bootstrap.min.js")}}
+		{{HTML::script("bower/bootstrap/dist/js/bootstrap.min.js")}}
 	</body>
 </html>
