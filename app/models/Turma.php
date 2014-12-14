@@ -25,7 +25,15 @@ class Turma extends Eloquent{
 	protected $rules = [
 		"disciplina_id" => "required|exists:disciplinas,id",
 		"professor_id"  => "exists:professores,id",
-		"codigo" => "required|min:3"
+		"codigo" 				=> "required|min:3"
+	];
+
+	protected $messages = [
+		"disciplina_id.required" 	=> "Você deve escolher uma disciplina.",
+		"disciplina_id.exists" 		=> "A disciplina selecionada não existe.",
+		"professor_id.exists" 		=> "O professor selecionado não existe.",
+		"codigo.required" 				=> "O código da turma é obrigatório.",
+		"codigo.min" 							=> "O código da turma deve conter ao menos :min caracteres."
 	];
 
 	public function disciplina(){

@@ -18,9 +18,15 @@ class AlunosController extends BaseController{
 
 	public function postTurmas($id){
 		$aluno = Aluno::find($id);
-		$aluno->turmas()->sync(Input::get("turmas", []));
 
-		return Redirect::to("/alunos/edit/$id/turmas");
+		if($aluno->turmas()->sync(Input::get("turmas", []))){
+			Session::flash("success", "Turmas alteradas com sucesso!");
+			return Redirect::to("/alunos");
+		}
+		else{
+			Session::flash("error", "Erro ao modificar as turmas do aluno {$aluno->nome}.");
+			return Redirect::to("/alunos/edit/{$id}/turmas");
+		}
 	}
 
 	protected function formView($id=null){

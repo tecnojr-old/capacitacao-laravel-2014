@@ -26,7 +26,7 @@ class TurmasController extends BaseController{
 		$turma->codigo = Input::get("codigo");
 
 		if($turma->save()){
-			Session::flash("success", "Os dados da turam foram salvos com sucesso!");
+			Session::flash("success", "Os dados da turma foram salvos com sucesso!");
 			return Redirect::to("turmas");
 		}
 		else{

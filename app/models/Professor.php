@@ -18,7 +18,15 @@ class Professor extends Eloquent{
 
 		protected  $rules = [
 			"nome" => "required|min:6",
-			"matricula"=> "required|digits:10|unique"
+			"matricula"=> "required|digits:9|unique"
+		];
+
+		protected $messages = [
+			"nome.required" 			=> "O nome do professor é obrigatório.",
+			"nome.min" 						=> "O nome do professor deve conter ao menos :min caracteres.",
+			"matricula.required" 	=> "A matrícula do professor é obrigatória.",
+			"matricula.digits" 		=> "A matricula deve conter ao menos :digits dígitos.",
+			"matricula.unique" 		=> "Já existe um professor cadastrado com esse número de matrícula."
 		];
 
 }

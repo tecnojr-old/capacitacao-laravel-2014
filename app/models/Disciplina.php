@@ -20,4 +20,12 @@ class Disciplina extends Eloquent{
 		"descricao" => "required|min:10",
 		"codigo" 		=> "required|min:6|unique"
 	];
+
+	protected $messages = [
+		"descricao.required" 	=> "A descrição da disciplia é obrigatória.",
+		"descricao.min" 			=> "A descrição da disciplina deve conter ao menos :min caracteres.",
+		"codigo.required"			=> "O código da disciplina é obrigatório.",
+		"codigo.min" 					=> "O código da disciplina deve conter ao menos :min caracteres.",
+		"codigo.unique"				=> "Já existe uma disciplina cadastrada com esse código."
+	];
 }
