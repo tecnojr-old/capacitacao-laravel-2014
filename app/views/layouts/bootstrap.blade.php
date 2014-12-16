@@ -33,10 +33,14 @@
 
 	</head>
 	<body>
-		<div class="col-md-8 col-md-offset-2">
-			@include("layouts.menu")
-		
-			@yield("content")		
+		<div class="col-md-8 col-md-offset-2">	
+			<div id="page-menu"	>
+				@include("layouts.menu")
+			</div>
+
+			<div id="page-content">
+				@yield("content")		
+			</div>
 		</div>
 
 		<!-- jQuery -->
