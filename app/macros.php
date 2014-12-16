@@ -49,10 +49,10 @@ HTML::macro("deleteButton", function($url, $options = []){
 
 	$attributes = array_merge([
 		"class" 	=> "btn btn-xs btn-danger glyphicon glyphicon-trash",
-		"onclick" => "return bootbox.rconfirm('Deseja realmente excluir esses dados?')"
+		"onclick" => "return bootbox.redirect_confirm('".URL::to($url)."','Deseja realmente excluir esses dados?')"
 	], $options);
 
-	return HTML::link($url, "", HTML::attributes($attributes));
+	return "<a href='javascript: false;' ".HTML::attributes($attributes)."></a>";
 });
 
 

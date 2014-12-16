@@ -37,7 +37,9 @@ class TurmasController extends BaseController{
 	}
 
 	public function getDelete($id){
-		Turma::find($id)->delete();
+		if(Turma::find($id)->delete()){
+			Session::flash("success", "Turma removida com sucesso!");
+		}
 
 		return Redirect::to("turmas");
 	}

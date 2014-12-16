@@ -48,7 +48,7 @@ class Aluno extends Eloquent{
 
 		static::deleting(function($model){
 			if($model->turmas()->count()){
-				Session::flash("error", "Não é possível remover o aluno {$model->noem}, você deve primeiro desassociá-lo das turmas.");
+				Session::flash("error", "Não é possível remover o aluno {$model->nome}, você deve primeiro desassociá-lo das turmas.");
 				return false;
 			}
 		});

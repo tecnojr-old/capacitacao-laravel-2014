@@ -32,7 +32,9 @@ class ProfessoresController extends BaseController{
 	}
 
 	public function getDelete($id){
-		Professor::find($id)->delete();
+		if(Professor::find($id)->delete()){
+			Session::flash("success", "Professor removido com sucesso!");
+		}
 
 		return Redirect::to("professores");
 	}

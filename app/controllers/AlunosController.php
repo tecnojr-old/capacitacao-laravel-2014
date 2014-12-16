@@ -59,7 +59,9 @@ class AlunosController extends BaseController{
 
 
 	public function getDelete($id){
-		Aluno::find($id)->delete();
+		if(Aluno::find($id)->delete()){
+			Session::flash("success", "Aluno removido com sucesso!");
+		}
 
 		return Redirect::to("alunos");	 
 	}

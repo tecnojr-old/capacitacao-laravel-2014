@@ -1,11 +1,13 @@
-bootbox.rconfirm = function(message){
-	var cboxr = false;
+bootbox.redirect_confirm = function(url, message, target){
+	if(typeof target == "undefined"){
+		target = "_self";
+	}
 
 	bootbox.confirm(message, function(result){
-		cboxr = result;
+		if(result===true){
+			window.open(url, target);
+		}
 	});
-
-	return cboxr;
 };
 
 bootbox.setDefaults({

@@ -17,9 +17,7 @@ jQuery.growl(false, {
 });
 
 function growl(title, type, options){
-	setTimeout(function(){
-		jQuery.growl(title, $.extend( {
-			type: type
-		}, options||{}));
-	}, 1000);
+	jQuery.growl(title, $.extend( {
+		type: type
+	}, options||{}));
 }

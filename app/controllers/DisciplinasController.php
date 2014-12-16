@@ -33,7 +33,9 @@ class DisciplinasController extends BaseController{
 	}
 
 	public function getDelete($id){
-		Disciplina::find($id)->delete();
+		if(Disciplina::find($id)->delete()){
+			Session::flash("success", "Disciplina removida co sucesso!");
+		}
 
 		return Redirect::to("disciplinas"); 
 	}
