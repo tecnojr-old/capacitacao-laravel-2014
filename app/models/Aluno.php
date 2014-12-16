@@ -44,13 +44,16 @@ class Aluno extends Eloquent{
 	protected $dates = ["data_nasc"];
 
 	public static function boot(){
+		parent::boot();
+
 		static::deleting(function($model){
 			if($model->turmas()->count()){
-				Session::flash("error", "Nâo é possível remover o aluno {$model->noem}, você deve primeiro desassocia-lo das turmas.");
+				Session::flash("error", "Não é possível remover o aluno {$model->noem}, você deve primeiro desassociá-lo das turmas.");
 				return false;
 			}
 		});
 	}
+
 
 	public function turmas(){
 		return $this->belongsToMany("Turma", "alunos_turmas");

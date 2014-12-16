@@ -11,6 +11,7 @@
 		<!-- Bootstrap CSS -->
 		{{HTML::style("bower/bootstrap/dist/css/bootstrap.min.css")}}
 		{{HTML::style("bower/bootstrap/dist/css/bootstrap-theme.min.css")}}
+		{{HTML::style("bower/animate.css/animate.css")}}
 
 		@if(isset($select2) && $select2 == true)
 			{{HTML::style("bower/select2/select2.css")}}
@@ -28,25 +29,13 @@
 			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
 			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 		<![endif]-->
+
+
 	</head>
 	<body>
 		<div class="col-md-8 col-md-offset-2">
 			@include("layouts.menu")
-			
-			@if(Session::has("success"))
-				<div class="alert alert-success alert-dismissible" role="alert">
-				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
-				  {{Session::get("success")}}
-				</div>
-			@endif
-
-			@if(Session::has("error"))
-				<div class="alert alert-danger alert-dismissible" role="alert">
-				  <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Fechar</span></button>
-				  {{Session::get("error")}}
-				</div>
-			@endif
-
+		
 			@yield("content")		
 		</div>
 
@@ -55,6 +44,12 @@
 		
 		<!-- Bootstrap JavaScript -->
 		{{HTML::script("bower/bootstrap/dist/js/bootstrap.min.js")}}
+
+		{{HTML::script("bower/bootstrap.growl/dist/bootstrap-growl.js")}}
+		{{HTML::script("js/bootstrap.growl/bootstrap-growl-config.js")}}
+
+		{{HTML::script("bower/bootbox.js/bootbox.js")}}
+		{{HTML::script("js/bootbox.js/bootbox-config.js")}}
 
 		<!-- Carregamento dos pacotes bower -->
 		@if(isset($select2) && $select2 == true)
@@ -68,5 +63,28 @@
 			{{HTML::script("js/datatables/dataTables.bootstrap.js")}}
 			{{HTML::script("js/datatables/datatables-config.js")}}
 		@endif
+
+		{{HTML::script("js/application.js")}}
+
+		@if(Session::has("success"))
+			<script type="text/javascript">
+				growl({
+				  title:"<b>Operação bem sucedida</b><br/>", 
+				  message: "{{Session::get("success")}}"
+				}, "success");
+			</script>
+		@endif
+
+		@if(Session::has("error"))
+			<script type="text/javascript">  
+				growl({
+					title:"<b>Houve um erro:</b><br/>", 
+				  message: "{{Session::get("error")}}"
+				}, "warning", {
+
+				});
+			</script>
+		@endif
+
 	</body>
 </html>
