@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Vluzrmos\ValidationTrait\ValidationTraitServiceProvider',
 		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+		'Bhutanio\BEncode\ServiceProvider'
 
 	),
 
