@@ -15,4 +15,10 @@ return array(
 
 	'debug' => true,
 
+	'providers' => array(
+    'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+    'Way\Generators\GeneratorsServiceProvider',
+		'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
+  ),
+
 );

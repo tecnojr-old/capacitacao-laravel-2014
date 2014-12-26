@@ -8,8 +8,10 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"vluzrmos/func-helpers": "dev-master",
+		"vluzrmos/validation-trait": "dev-master",
 		"barryvdh/laravel-ide-helper": "v1.10.0",
-		"doctrine/dbal"              : "2.4.2"
+		"doctrine/dbal"              : "2.4.2",
+		"xethron/migrations-generator": "1.2.2"
 	},
 
   "require-dev": {

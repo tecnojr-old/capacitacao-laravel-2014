@@ -94,7 +94,6 @@ return array(
 	*/
 
 	'providers' => array(
-
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
@@ -122,9 +121,6 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Vluzrmos\ValidationTrait\ValidationTraitServiceProvider',
-		'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
-		'Bhutanio\BEncode\ServiceProvider'
-
 	),
 
 	/*
@@ -190,8 +186,7 @@ return array(
 		'Str'               => 'Illuminate\Support\Str',
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
-		'View'              => 'Illuminate\Support\Facades\View',
-		'BEncode' 					=> 'Bhutanio\BEncode\BEncode'
+		'View'              => 'Illuminate\Support\Facades\View'
 
 	),
 
