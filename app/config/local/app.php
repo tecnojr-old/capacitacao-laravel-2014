@@ -15,10 +15,15 @@ return array(
 
 	'debug' => true,
 
-	'providers' => array(
+	'providers' => array_merge(array_get(require __DIR__."/../app.php", "providers"), array(
     'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
     'Way\Generators\GeneratorsServiceProvider',
 		'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
-  ),
+		'Barryvdh\Debugbar\ServiceProvider',
+  )),
+
+  'aliases' => array(
+  	'Debugbar' => 'Barryvdh\Debugbar\Facade',
+  )
 
 );

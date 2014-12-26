@@ -11,10 +11,10 @@
  * @property-read \Professor $professor
  * @property-read \Illuminate\Database\Eloquent\Collection|\Aluno[] $alunos
  * @property-read mixed $descricao
- * @method static \Illuminate\Database\Query\Builder|\Turma whereId($value) 
- * @method static \Illuminate\Database\Query\Builder|\Turma whereProfessorId($value) 
- * @method static \Illuminate\Database\Query\Builder|\Turma whereDisciplinaId($value) 
- * @method static \Illuminate\Database\Query\Builder|\Turma whereCodigo($value) 
+ * @method static \Illuminate\Database\Query\Builder|\Turma whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Turma whereProfessorId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Turma whereDisciplinaId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Turma whereCodigo($value)
  */
 class Turma extends Eloquent{
 	use ValidationTrait;

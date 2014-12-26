@@ -6,16 +6,17 @@
 	"type": "project",
 
 	"require": {
-		"laravel/framework": "4.2.*",
+		"laravel/framework": "~4.2",
 		"vluzrmos/func-helpers": "dev-master",
-		"vluzrmos/validation-trait": "dev-master",
-		"barryvdh/laravel-ide-helper": "v1.10.0",
-		"doctrine/dbal"              : "2.4.2",
-		"xethron/migrations-generator": "1.2.2"
+		"vluzrmos/validation-trait": "dev-master"
 	},
 
   "require-dev": {
-      "fzaninotto/faker": "1.4.0"
+		"barryvdh/laravel-ide-helper": "v1.10.0",
+		"barryvdh/laravel-debugbar": "~1.8",
+		"doctrine/dbal"              : "2.4.2",
+    "fzaninotto/faker": "1.4.0",
+		"xethron/migrations-generator": "1.2.2"
   },
 
 	"autoload": {

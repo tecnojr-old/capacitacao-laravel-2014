@@ -8,19 +8,20 @@
  * @property string $matricula
  * @property \Carbon\Carbon $data_nasc
  * @property-read \Illuminate\Database\Eloquent\Collection|\Turma[] $turmas
- * @method static \Illuminate\Database\Query\Builder|\Aluno whereId($value) 
- * @method static \Illuminate\Database\Query\Builder|\Aluno whereNome($value) 
- * @method static \Illuminate\Database\Query\Builder|\Aluno whereMatricula($value) 
- * @method static \Illuminate\Database\Query\Builder|\Aluno whereDataNasc($value) 
+ * @method static \Illuminate\Database\Query\Builder|\Aluno whereId($value)
+ * @method static \Illuminate\Database\Query\Builder|\Aluno whereNome($value)
+ * @method static \Illuminate\Database\Query\Builder|\Aluno whereMatricula($value)
+ * @method static \Illuminate\Database\Query\Builder|\Aluno whereDataNasc($value)
  */
 class Aluno extends Eloquent{
 	use ValidationTrait;	
+	use SoftDeletingTrait;
 
 	protected $table = "alunos";
 
 	protected $rules = [
 		'nome' 			=> 'required|min:3',
-		'matricula' =>'required|digits:9|unique',
+		'matricula' =>'required|digits:9|unique|unique:professores,matricula,NULL,id,deleted_at,NULL',
 		'data_nasc' => 'required|date|date_format:Y-m-d H:i:s|after:1950-01-01|before:2004-01-01'
 	];
 
@@ -30,7 +31,7 @@ class Aluno extends Eloquent{
 		
 		'matricula.digits' 		=> "O campo matricula deve conter exatamente :digits digitos.",
 		'matricula.required' 	=> "Por favor, digite a matrícula do aluno.",
-		'matricula.unique'		=> "Já existe um aluno cadastrado com essa matrícula.",
+		'matricula.unique'		=> "Esse número de matrícula já está em uso.",
 
 		'data_nasc.after' 			=> "A data de nascimento deve ser após :date.",
 		'data_nasc.before' 			=> "A data de nascimento deve ser anterior a :date.",
