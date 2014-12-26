@@ -3,7 +3,7 @@
 class AlunosController extends BaseController{
 	
 	public function getIndex(){
-		$alunos = Aluno::all();
+		$alunos = Aluno::with("turmas")->get();
 
 		return View::make("alunos.table")->withAlunos($alunos);
 	}

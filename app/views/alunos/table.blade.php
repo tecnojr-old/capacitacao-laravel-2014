@@ -23,7 +23,7 @@
 				<td> 
 					
 					<div class="btn-group">
-						{{HTML::linkButton("alunos/edit/".$aluno->id."/turmas", "[".$aluno->turmas()->count()."]Turmas")}}
+						{{HTML::linkButton("alunos/edit/".$aluno->id."/turmas", "[".$aluno->turmas->count()."]Turmas")}}
 						{{HTML::editButton("alunos/edit/".$aluno->id)}}
 						{{HTML::deleteButton("alunos/delete/".$aluno->id)}} 
 					</div>

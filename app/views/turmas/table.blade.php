@@ -21,7 +21,7 @@
 			<td>{{$turma->codigo}}</td>
 			<td>
 				<div class="btn-group">
-					{{HTML::linkButton("turmas/{$turma->id}/alunos", "[".$turma->alunos()->count()."]Alunos")}}
+					{{HTML::linkButton("turmas/{$turma->id}/alunos", "[".$turma->alunos->count()."]Alunos")}}
 					{{HTML::editButton("turmas/edit/".$turma->id)}}
 					{{HTML::deleteButton("turmas/delete/".$turma->id)}} 
 				</div>
