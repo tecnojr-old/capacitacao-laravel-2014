@@ -15,15 +15,15 @@ return array(
 
 	'debug' => true,
 
-	'providers' => append_config([
+	'providers' => append_config(array(
     'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
     'Way\Generators\GeneratorsServiceProvider',
 		'Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider',
 		'Barryvdh\Debugbar\ServiceProvider',
-  ]),
+  )),
 
-  'aliases' => array(
+  'aliases' => append_config(array(
   	'Debugbar' => 'Barryvdh\Debugbar\Facade',
-  )
+  ))
 
 );
